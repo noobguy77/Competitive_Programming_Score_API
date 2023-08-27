@@ -14,6 +14,7 @@ class Details(Resource):
     def get(self, platform, username):
 
         user_data = UserData(username)
+        
 
         try:
             return user_data.get_details(platform)
@@ -37,4 +38,4 @@ def invalid_route(e):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, host='127.0.0.1', port=5000)
